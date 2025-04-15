@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Zainab! ✨</title>
+    <title>Happy Birthday Fareeha! ✨</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <style>
         /* Base Styles */
@@ -1247,7 +1247,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Zainab" class="profile-img">
-        <h1 class="name">Zainab</h1>
+        <h1 class="name">Fareeha</h1>
         <p style="color: #ff6b9d; font-size: 1.2em;">Wishing you the happiest birthday! ✨</p>
     </section>
 
@@ -1275,7 +1275,7 @@
     </section>
 
     <!-- Memory Slideshow -->
-    <section>
+    <section style="visibility: hidden;">
         <h2 style="color: #ff6b9d; margin-bottom: 20px;">Happy Memories</h2>
         <div class="slideshow">
             <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" class="slide active" alt="Memory 1">
@@ -1306,7 +1306,7 @@
                 <div>Seconds</div>
             </div>
         </div>
-        <p id="countdown-text" style="margin-top: 20px;">Until your birthday on April 26, 2025!</p>
+        <p id="countdown-text" style="margin-top: 20px;">Until your birthday on April 15, 2025!</p>
     </section>
 
     <!-- Cake Section -->
@@ -1323,7 +1323,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>Made with ❤️ for Zainab's Birthday</p>
+        <p>Made with ❤️ for Fareeha's Birthday</p>
     </footer>
 
     <script>
@@ -1398,11 +1398,11 @@
         // Countdown
         function updateCountdown() {
             const now = new Date();
-            let targetDate = new Date('April 26, 2025 00:00:00');
+            let targetDate = new Date('April 15, 2025 00:00:00');
             
             // If birthday has passed, target next year
             if (now > targetDate) {
-                targetDate = new Date('April 26, 2026 00:00:00');
+                targetDate = new Date('April 15, 2026 00:00:00');
                 document.getElementById('countdown-text').textContent = "Until your next birthday!";
             }
             
@@ -1491,10 +1491,10 @@
                 }
             });
 
-            // Footer Fireworks (Spell Zainab)
+            // Footer Fireworks (Spell fareeha)
             new IntersectionObserver((entries) => {
                 if(entries[0].isIntersecting) {
-                    'Zainab'.split('').forEach((char, i) => {
+                    'Fareeha'.split('').forEach((char, i) => {
                         setTimeout(() => {
                             triggerConfetti({
                                 origin: { x: (i+1)/7, y: 0.7 }
