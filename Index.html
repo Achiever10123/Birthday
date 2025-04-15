@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Zainab! ✨</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0a0a1a;
+            color: #fff;
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ff6b9d" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>') 12 12, auto;
+        }
+
+        /* Enhanced Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a1a;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 10s ease;
+        }
+
+
+        
+        /* From Uiverse.io by Timeless-Eve */ 
+.loader {
+  --duration: 3s;
+  --primary: rgb(0, 90, 53);
+  --primary-light: #001b18;
+  --primary-rgba: rgba(96, 125, 211, 0);
+  width: 200px;
+  height: 320px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+@media (max-width: 480px) {
+  .loader {
+    zoom: 0.44;
+  }
+}
+
+.loader:before,
+.loader:after {
+  --r: 20.5deg;
+  content: "";
+  width: 320px;
+  height: 140px;
+  position: absolute;
+  right: 32%;
+  bottom: -11px;
+  /* change the back groung color on switching from light to dark mood */
+  
+  transform: translateZ(200px) rotate(var(--r));
+  -webkit-animation: mask var(--duration) linear forwards infinite;
+  animation: mask var(--duration) linear forwards infinite;
+}
+
+.loader:after {
+  --r: -20.5deg;
+  right: auto;
+  left: 32%;
+}
+
+.loader .ground {
+  position: absolute;
+  left: -50px;
+  bottom: -120px;
+  transform-style: preserve-3d;
+  transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+}
+
+.loader .ground div {
+  transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px)
+    translateZ(100px) scale(0);
+  width: 200px;
+  height: 200px;
+  background: var(--primary);
+  background: linear-gradient(
+    45deg,
+    var(--primary) 0%,
+    var(--primary) 50%,
+    var(--primary-light) 50%,
+    var(--primary-light) 100%
+  );
+  transform-style: preserve-3d;
+  -webkit-animation: ground var(--duration) linear forwards infinite;
+  animation: ground var(--duration) linear forwards infinite;
+}
+
+.loader .ground div:before,
+.loader .ground div:after {
+  --rx: 90deg;
+  --ry: 0deg;
+  --x: 44px;
+  --y: 162px;
+  --z: -50px;
+  content: "";
+  width: 156px;
+  height: 300px;
+  opacity: 0;
+  background: linear-gradient(var(--primary), var(--primary-rgba));
+  position: absolute;
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) translate(var(--x), var(--y))
+    translateZ(var(--z));
+  -webkit-animation: ground-shine var(--duration) linear forwards infinite;
+  animation: ground-shine var(--duration) linear forwards infinite;
+}
+
+.loader .ground div:after {
+  --rx: 90deg;
+  --ry: 90deg;
+  --x: 0;
+  --y: 177px;
+  --z: 150px;
+}
+
+.loader .box {
+  --x: 0;
+  --y: 0;
+  position: absolute;
+  -webkit-animation: var(--duration) linear forwards infinite;
+  animation: var(--duration) linear forwards infinite;
+  transform: translate(var(--x), var(--y));
+}
+
+.loader .box div {
+  background-color: var(--primary);
+  width: 48px;
+  height: 48px;
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-animation: var(--duration) ease forwards infinite;
+  animation: var(--duration) ease forwards infinite;
+  transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+}
+
+.loader .box div:before,
+.loader .box div:after {
+  --rx: 90deg;
+  --ry: 0deg;
+  --z: 24px;
+  --y: -24px;
+  --x: 0;
+  content: "";
+  position: absolute;
+  background-color: inherit;
+  width: inherit;
+  height: inherit;
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) translate(var(--x), var(--y))
+    translateZ(var(--z));
+  filter: brightness(var(--b, 1.2));
+}
+
+.loader .box div:after {
+  --rx: 0deg;
+  --ry: 90deg;
+  --x: 24px;
+  --y: 0;
+  --b: 1.4;
+}
+
+.loader .box.box0 {
+  --x: -220px;
+  --y: -120px;
+  left: 58px;
+  top: 108px;
+}
+
+.loader .box.box1 {
+  --x: -260px;
+  --y: 120px;
+  left: 25px;
+  top: 120px;
+}
+
+.loader .box.box2 {
+  --x: 120px;
+  --y: -190px;
+  left: 58px;
+  top: 64px;
+}
+
+.loader .box.box3 {
+  --x: 280px;
+  --y: -40px;
+  left: 91px;
+  top: 120px;
+}
+
+.loader .box.box4 {
+  --x: 60px;
+  --y: 200px;
+  left: 58px;
+  top: 132px;
+}
+
+.loader .box.box5 {
+  --x: -220px;
+  --y: -120px;
+  left: 25px;
+  top: 76px;
+}
+
+.loader .box.box6 {
+  --x: -260px;
+  --y: 120px;
+  left: 91px;
+  top: 76px;
+}
+
+.loader .box.box7 {
+  --x: -240px;
+  --y: 200px;
+  left: 58px;
+  top: 87px;
+}
+
+.loader .box0 {
+  -webkit-animation-name: box-move0;
+  animation-name: box-move0;
+}
+
+.loader .box0 div {
+  -webkit-animation-name: box-scale0;
+  animation-name: box-scale0;
+}
+
+.loader .box1 {
+  -webkit-animation-name: box-move1;
+  animation-name: box-move1;
+}
+
+.loader .box1 div {
+  -webkit-animation-name: box-scale1;
+  animation-name: box-scale1;
+}
+
+.loader .box2 {
+  -webkit-animation-name: box-move2;
+  animation-name: box-move2;
+}
+
+.loader .box2 div {
+  -webkit-animation-name: box-scale2;
+  animation-name: box-scale2;
+}
+
+.loader .box3 {
+  -webkit-animation-name: box-move3;
+  animation-name: box-move3;
+}
+
+.loader .box3 div {
+  -webkit-animation-name: box-scale3;
+  animation-name: box-scale3;
+}
+
+.loader .box4 {
+  -webkit-animation-name: box-move4;
+  animation-name: box-move4;
+}
+
+.loader .box4 div {
+  -webkit-animation-name: box-scale4;
+  animation-name: box-scale4;
+}
+
+.loader .box5 {
+  -webkit-animation-name: box-move5;
+  animation-name: box-move5;
+}
+
+.loader .box5 div {
+  -webkit-animation-name: box-scale5;
+  animation-name: box-scale5;
+}
+
+.loader .box6 {
+  -webkit-animation-name: box-move6;
+  animation-name: box-move6;
+}
+
+.loader .box6 div {
+  -webkit-animation-name: box-scale6;
+  animation-name: box-scale6;
+}
+
+.loader .box7 {
+  -webkit-animation-name: box-move7;
+  animation-name: box-move7;
+}
+
+.loader .box7 div {
+  -webkit-animation-name: box-scale7;
+  animation-name: box-scale7;
+}
+
+@-webkit-keyframes box-move0 {
+  12% {
+    transform: translate(var(--x), var(--y));
+  }
+
+  25%,
+  52% {
+    transform: translate(0, 0);
+  }
+
+  80% {
+    transform: translate(0, -32px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 188px);
+  }
+}
+
+@keyframes box-move0 {
+  12% {
+    transform: translate(var(--x), var(--y));
+  }
+
+  25%,
+  52% {
+    transform: translate(0, 0);
+  }
+
+  80% {
+    transform: translate(0, -32px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 188px);
+  }
+}
+
+@-webkit-keyframes box-scale0 {
+  6% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+  }
+
+  14%,
+  100% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+  }
+}
+
+@keyframes box-scale0 {
+  6% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+  }
+
+  14%,
+  100% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+  }
+}
+
+@-webkit-keyframes box-move1 {
+  16% {
+    transform: translate(var(--x), var(--y));
+  }
+
+  29%,
+  52% {
+    transform: translate(0, 0);
+  }
+
+  80% {
+    transform: translate(0, -32px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 188px);
+  }
+}
+
+@keyframes box-move1 {
+  16% {
+    transform: translate(var(--x), var(--y));
+  }
+
+  29%,
+  52% {
+    transform: translate(0, 0);
+  }
+
+  80% {
+    transform: translate(0, -32px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 188px);
+  }
+}
+
+@-webkit-keyframes box-scale1 {
+  10% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+  }
+
+  18%,
+  100% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+  }
+}
+
+@keyframes box-scale1 {
+  10% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+  }
+
+  18%,
+  100% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+  }
+}
+
+@-webkit-keyframes box-move2 {
+  20% {
+    transform: translate(var(--x), var(--y));
+  }
+
+  33%,
+  52% {
+    transform: translate(0, 0);
+  }
+
+  80% {
+    transform: translate(0, -32px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 188px);
+  }
+}
+
+@keyframes box-move2 {
+  20% {
+    transform: translate(var(--x), var(--y));
+  }
+
+  33%,
+  52% {
+    transform: translate(0, 0);
+  }
+
+  80% {
+    transform: translate(0, -32px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 188px);
+  }
+}
+
+@-webkit-keyframes box-scale2 {
+  14% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+  }
+
+  22%,
+  100% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+  }
+}
+
+@keyframes box-scale2 {
+  14% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+  }
+
+  22%,
+  100% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+  }
+}
+
+@-webkit-keyframes box-move3 {
+  24% {
+    transform: translate(var(--x), var(--y));
+  }
+
+  37%,
+  52% {
+    transform: translate(0, 0);
+  }
+
+  80% {
+    transform: translate(0, -32px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 188px);
+  }
+}
+
+@keyframes box-move3 {
+  24% {
+    transform: translate(var(--x), var(--y));
+  }
+
+  37%,
+  52% {
+    transform: translate(0, 0);
+  }
+
+  80% {
+    transform: translate(0, -32px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 188px);
+  }
+}
+
+@-webkit-keyframes box-scale3 {
+  18% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+  }
+
+  26%,
+  100% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+  }
+}
+
+@keyframes box-scale3 {
+  18% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+  }
+
+  26%,
+  100% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+  }
+}
+
+@-webkit-keyframes box-move4 {
+  28% {
+    transform: translate(var(--x), var(--y));
+  }
+
+  41%,
+  52% {
+    transform: translate(0, 0);
+  }
+
+  80% {
+    transform: translate(0, -32px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 188px);
+  }
+}
+
+@keyframes box-move4 {
+  28% {
+    transform: translate(var(--x), var(--y));
+  }
+
+  41%,
+  52% {
+    transform: translate(0, 0);
+  }
+
+  80% {
+    transform: translate(0, -32px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 188px);
+  }
+}
+
+@-webkit-keyframes box-scale4 {
+  22% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+  }
+
+  30%,
+  100% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+  }
+}
+
+@keyframes box-scale4 {
+  22% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+  }
+
+  30%,
+  100% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+  }
+}
+
+@-webkit-keyframes box-move5 {
+  32% {
+    transform: translate(var(--x), var(--y));
+  }
+
+  45%,
+  52% {
+    transform: translate(0, 0);
+  }
+
+  80% {
+    transform: translate(0, -32px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 188px);
+  }
+}
+
+@keyframes box-move5 {
+  32% {
+    transform: translate(var(--x), var(--y));
+  }
+
+  45%,
+  52% {
+    transform: translate(0, 0);
+  }
+
+  80% {
+    transform: translate(0, -32px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 188px);
+  }
+}
+
+@-webkit-keyframes box-scale5 {
+  26% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+  }
+
+  34%,
+  100% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+  }
+}
+
+@keyframes box-scale5 {
+  26% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+  }
+
+  34%,
+  100% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+  }
+}
+
+@-webkit-keyframes box-move6 {
+  36% {
+    transform: translate(var(--x), var(--y));
+  }
+
+  49%,
+  52% {
+    transform: translate(0, 0);
+  }
+
+  80% {
+    transform: translate(0, -32px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 188px);
+  }
+}
+
+@keyframes box-move6 {
+  36% {
+    transform: translate(var(--x), var(--y));
+  }
+
+  49%,
+  52% {
+    transform: translate(0, 0);
+  }
+
+  80% {
+    transform: translate(0, -32px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 188px);
+  }
+}
+
+@-webkit-keyframes box-scale6 {
+  30% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+  }
+
+  38%,
+  100% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+  }
+}
+
+@keyframes box-scale6 {
+  30% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+  }
+
+  38%,
+  100% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+  }
+}
+
+@-webkit-keyframes box-move7 {
+  40% {
+    transform: translate(var(--x), var(--y));
+  }
+
+  53%,
+  52% {
+    transform: translate(0, 0);
+  }
+
+  80% {
+    transform: translate(0, -32px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 188px);
+  }
+}
+
+@keyframes box-move7 {
+  40% {
+    transform: translate(var(--x), var(--y));
+  }
+
+  53%,
+  52% {
+    transform: translate(0, 0);
+  }
+
+  80% {
+    transform: translate(0, -32px);
+  }
+
+  90%,
+  100% {
+    transform: translate(0, 188px);
+  }
+}
+
+@-webkit-keyframes box-scale7 {
+  34% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+  }
+
+  42%,
+  100% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+  }
+}
+
+@keyframes box-scale7 {
+  34% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(0);
+  }
+
+  42%,
+  100% {
+    transform: rotateY(-47deg) rotateX(-15deg) rotateZ(15deg) scale(1);
+  }
+}
+
+@-webkit-keyframes ground {
+  0%,
+  65% {
+    transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px)
+      translateZ(100px) scale(0);
+  }
+
+  75%,
+  90% {
+    transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px)
+      translateZ(100px) scale(1);
+  }
+
+  100% {
+    transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px)
+      translateZ(100px) scale(0);
+  }
+}
+
+@keyframes ground {
+  0%,
+  65% {
+    transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px)
+      translateZ(100px) scale(0);
+  }
+
+  75%,
+  90% {
+    transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px)
+      translateZ(100px) scale(1);
+  }
+
+  100% {
+    transform: rotateX(90deg) rotateY(0deg) translate(-48px, -120px)
+      translateZ(100px) scale(0);
+  }
+}
+
+@-webkit-keyframes ground-shine {
+  0%,
+  70% {
+    opacity: 0;
+  }
+
+  75%,
+  87% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ground-shine {
+  0%,
+  70% {
+    opacity: 0;
+  }
+
+  75%,
+  87% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes mask {
+  0%,
+  65% {
+    opacity: 0;
+  }
+
+  66%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes mask {
+  0%,
+  65% {
+    opacity: 0;
+  }
+
+  66%,
+  100% {
+    opacity: 1;
+  }
+}
+
+
+        /* Star Background */
+        .stars-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle var(--duration) ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: rgba(10, 10, 26, 0.9);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: radial-gradient(circle, #1a1a2a 0%, #0a0a1a 100%);
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid #ff6b9d;
+            box-shadow: 0 0 30px rgba(255, 107, 157, 0.3);
+            margin-bottom: 30px;
+            object-fit: cover;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .name {
+            font-size: 4em;
+            color: #ff6b9d;
+            margin: 20px 0;
+            text-shadow: 0 0 20px rgba(255, 107, 157, 0.3);
+        }
+
+        /* Music Player */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(26, 26, 42, 0.9);
+            border-radius: 30px;
+            padding: 12px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+
+        .music-control {
+            background: none;
+            border: none;
+            font-size: 1.2em;
+            color: #ff6b9d;
+            cursor: pointer;
+            margin: 0 8px;
+        }
+
+        /* Interactive Letter */
+        .letter-container {
+            perspective: 1004px;
+            margin: 30px auto;
+        }
+
+        .letter-envelope {
+            width: 300px;
+            height: 410px;
+            background: #1a1a2a;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200"><rect width="300" height="200" rx="10" ry="10" fill="%231a1a2a"/><path d="M20,20 L280,20 L150,120 Z" fill="%232a2a42"/><rect x="20" y="20" width="260" height="160" rx="5" ry="5" fill="none" stroke="%23ff6b9d" stroke-width="2"/></svg>');
+            background-size: cover;
+        }
+
+        .letter-envelope.open {
+            transform: rotateY(180deg);
+        }
+
+        .letter-content {
+            position: absolute;
+            backface-visibility: hidden;
+            padding: 30px;
+            transform: rotateY(180deg);
+            background: #2a2a42;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Slideshow */
+        .slideshow {
+            position: relative;
+            max-width: 800px;
+            width: 100%;
+            margin: 30px auto;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: opacity 1s ease;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+
+        .slide.active {
+            display: block;
+            animation: fade 1.5s;
+        }
+
+        @keyframes fade {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+
+        /* Countdown */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(26, 26, 42, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 80px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .countdown-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #ff6b9d;
+        }
+
+        /* Cake */
+        .cake-container {
+            margin: 40px 0;
+        }
+
+        .cake {
+            position: relative;
+            width: 150px;
+            height: 100px;
+            background: #f9c5d1;
+            border-radius: 10px 10px 0 0;
+            margin: 0 auto;
+        }
+
+        .cake:after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: #f999b7;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .candle {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 30px;
+            background: white;
+        }
+
+        .flame {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            width: 20px;
+            height: 40px;
+            background: linear-gradient(180deg, #ff9e00 0%, #ff2200 100%);
+            border-radius: 50% 50% 20% 20%;
+            filter: blur(2px);
+            animation: flicker 0.1s infinite alternate;
+            transform: translateX(-50%);
+        }
+
+        @keyframes flicker {
+            0% { transform: translateX(-50%) scale(1) rotate(2deg); }
+            100% { transform: translateX(-50%) scale(1.1) rotate(-2deg); }
+        }
+
+        .blow-btn {
+            background: #ff6b9d;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .blow-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255,107,157,0.4);
+        }
+
+        /* Petals */
+        .petal {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23ff6b9d" d="M50 0c13.8 0 25 20 25 35 0 30-25 65-25 65S25 65 25 35C25 20 36.2 0 50 0z"/></svg>');
+            background-size: cover;
+            opacity: 0.7;
+            animation: falling 8s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes falling {
+            0% { transform: translateY(-10vh) rotate(0deg); }
+            100% { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 20px;
+            background: #1a1a2a;
+            text-align: center;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Heart Cursor Trail */
+        .heart-trail {
+            position: absolute;
+            pointer-events: none;
+            font-size: 16px;
+            animation: trail-fade 1s forwards;
+            z-index: 999;
+        }
+
+        @keyframes trail-fade {
+            0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .name { font-size: 2.5em; }
+            .countdown-item { min-width: 70px; }
+            .letter-envelope { width: 250px; height: 170px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader">
+            <div class="box box0">
+    <div></div>
+  </div>
+  <div class="box box1">
+    <div></div>
+  </div>
+  <div class="box box2">
+    <div></div>
+  </div>
+  <div class="box box3">
+    <div></div>
+  </div>
+  <div class="box box4">
+    <div></div>
+  </div>
+  <div class="box box5">
+    <div></div>
+  </div>
+  <div class="box box6">
+    <div></div>
+  </div>
+  <div class="box box7">
+    <div></div>
+  </div>
+  <div class="ground">
+    <div></div>
+  </div>
+        </div>
+        <p style="color: #fff; margin-top: 20px; font-size: 1.2em;">Loading Birthday Magic...</p>
+    </div>
+
+    <!-- Star Background -->
+    <div class="stars-bg" id="starsBg"></div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <button class="music-control" id="playBtn">▶️</button>
+        <span style="color: #fff; margin-left: 10px;">Runaway</span>
+    </div>
+    <audio id="bgMusic" loop>
+        <!-- Replace with your actual music file path -->
+        <source src="https://files.ceenaija.com/wp-content/uploads/music/2021/05/Aurora_-_Runaway_CeeNaija.com_.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Zainab" class="profile-img">
+        <h1 class="name">Zainab</h1>
+        <p style="color: #ff6b9d; font-size: 1.2em;">Wishing you the happiest birthday! ✨</p>
+    </section>
+
+    <!-- Interactive Letter -->
+    <section>
+        <h2 style="color: #ff6b9d; margin-bottom: 20px;">A Special Note For You</h2>
+        <div class="letter-container">
+            <div class="letter-envelope" id="letterEnvelope">
+                <div class="letter-content">
+                    <h3 style="color: #ff6b9d; margin-bottom: 15px;">Dear Zainab,</h3>
+                    <p style="line-height: 1.8; margin-bottom: 15px;">
+                        On your special day, I just wanted to remind you how amazing you are! 
+                        You're one of the most genuine, kind-hearted people I know, and the world 
+                        is brighter with you in it.
+                    </p>
+                    <p style="font-style: italic;">
+                        Wishing you endless joy and happiness! 🎉
+                    </p>
+                <p style="color: lightblue; font-family: monospace; padding-top: 1rem;">
+                    Silent Achiever 
+                </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memory Slideshow -->
+    <section>
+        <h2 style="color: #ff6b9d; margin-bottom: 20px;">Happy Memories</h2>
+        <div class="slideshow">
+            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" class="slide active" alt="Memory 1">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" class="slide" alt="Memory 2">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" class="slide" alt="Memory 3">
+            <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" class="slide" alt="Memory 4">
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section>
+        <h2 style="color: #ff6b9d; margin-bottom: 20px;">Birthday Countdown</h2>
+        <div class="countdown" id="countdown">
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">00</div>
+                <div>Days</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">00</div>
+                <div>Hours</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">00</div>
+                <div>Minutes</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">00</div>
+                <div>Seconds</div>
+            </div>
+        </div>
+        <p id="countdown-text" style="margin-top: 20px;">Until your birthday on April 26, 2025!</p>
+    </section>
+
+    <!-- Cake Section -->
+    <section>
+        <h2 style="color: #ff6b9d; margin-bottom: 20px;">Make a Wish!</h2>
+        <div class="cake-container">
+            <div class="cake">
+                <div class="candle"></div>
+                <div class="flame" id="flame"></div>
+            </div>
+            <button class="blow-btn" id="blowBtn">Blow Out Candles</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️ for Zainab's Birthday</p>
+    </footer>
+
+    <script>
+        // Initialize Stars
+        function createStars() {
+            const starsBg = document.getElementById('starsBg');
+            for(let i = 0; i < 200; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.width = `${Math.random() * 3}px`;
+                star.style.height = star.style.width;
+                star.style.setProperty('--duration', `${Math.random() * 3 + 1}s`);
+                starsBg.appendChild(star);
+            }
+        }
+
+        // Confetti Function
+        function triggerConfetti(options = {}) {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#ff6b9d', '#9d6bff', '#6bff9d'],
+                ...options
+            });
+        }
+
+        // Create Petals
+        function createPetals() {
+            setInterval(() => {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.style.left = `${Math.random() * 100}%`;
+                petal.style.animationDuration = `${Math.random() * 5 + 5}s`;
+                petal.style.opacity = Math.random() * 0.5 + 0.3;
+                petal.style.width = `${Math.random() * 15 + 10}px`;
+                petal.style.height = petal.style.width;
+                document.body.appendChild(petal);
+                setTimeout(() => petal.remove(), 8000);
+            }, 300);
+        }
+
+        // Heart Cursor Trail
+        function createHeartTrail() {
+            document.addEventListener('mousemove', (e) => {
+                const heart = document.createElement('div');
+                heart.className = 'heart-trail';
+                heart.style.left = `${e.pageX}px`;
+                heart.style.top = `${e.pageY}px`;
+                heart.innerHTML = '❤️';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 1000);
+            });
+        }
+
+        // Slideshow
+        function initSlideshow() {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide');
+            
+            function showSlide() {
+                slides.forEach(slide => slide.classList.remove('active'));
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+            
+            setInterval(showSlide, 3000);
+        }
+
+        // Countdown
+        function updateCountdown() {
+            const now = new Date();
+            let targetDate = new Date('April 26, 2025 00:00:00');
+            
+            // If birthday has passed, target next year
+            if (now > targetDate) {
+                targetDate = new Date('April 26, 2026 00:00:00');
+                document.getElementById('countdown-text').textContent = "Until your next birthday!";
+            }
+            
+            const diff = targetDate - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Initialize Everything
+        window.addEventListener('load', () => {
+            // Preloader
+            setTimeout(() => {
+                document.getElementById('preloader').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('preloader').style.display = 'none';
+                }, 500);
+            }, 1500);
+
+            // Stars
+            createStars();
+            
+            // Music Player
+            const bgMusic = document.getElementById('bgMusic');
+            const playBtn = document.getElementById('playBtn');
+            bgMusic.volume = 0.3;
+            
+            // Enable audio on first interaction (due to browser autoplay policies)
+            const enableAudio = () => {
+                bgMusic.play().catch(e => console.log(e));
+                document.removeEventListener('click', enableAudio);
+                document.removeEventListener('keydown', enableAudio);
+            };
+            
+            document.addEventListener('click', enableAudio);
+            document.addEventListener('keydown', enableAudio);
+            
+            playBtn.addEventListener('click', () => {
+                if (bgMusic.paused) {
+                    bgMusic.play();
+                    playBtn.textContent = '⏸️';
+                } else {
+                    bgMusic.pause();
+                    playBtn.textContent = '▶️';
+                }
+            });
+
+            // Petals
+            createPetals();
+
+            // Heart Trail
+            createHeartTrail();
+
+            // Slideshow
+            initSlideshow();
+
+            // Countdown
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+
+            // Cake Candles
+            document.getElementById('blowBtn').addEventListener('click', function() {
+                const flame = document.getElementById('flame');
+                flame.style.animation = 'none';
+                flame.style.opacity = '0';
+                
+                // Trigger confetti
+                triggerConfetti();
+                
+                this.textContent = 'Wish granted! 🎂';
+                this.disabled = true;
+            });
+
+            // Letter Envelope
+            document.getElementById('letterEnvelope').addEventListener('click', function() {
+                this.classList.toggle('open');
+                if (this.classList.contains('open')) {
+                    triggerConfetti({ particleCount: 50 });
+                }
+            });
+
+            // Footer Fireworks (Spell Zainab)
+            new IntersectionObserver((entries) => {
+                if(entries[0].isIntersecting) {
+                    'Zainab'.split('').forEach((char, i) => {
+                        setTimeout(() => {
+                            triggerConfetti({
+                                origin: { x: (i+1)/7, y: 0.7 }
+                            });
+                        }, i * 300);
+                    });
+                }
+            }, { threshold: 0.5 }).observe(document.querySelector('footer'));
+
+            // Initial confetti burst
+            setTimeout(() => triggerConfetti(), 2000);
+        });
+    </script>
+</body>
+</html>
